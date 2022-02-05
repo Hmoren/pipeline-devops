@@ -5,6 +5,8 @@
 */
 def call(stages) {
 
+    sh "echo 'ESTOY EN GRADLE'"
+
     def listStages = stages.split(";")
     listStages.each{
         println("este es uno de los stages ===> ${it}")

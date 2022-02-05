@@ -4,6 +4,14 @@
     ejecucion.call()
 */
 def call(stages) {
+
+    sh "echo 'ESTOY EN MAVEN'"
+
+    def listStages = stages.split(";")
+    listStages.each{
+        println("este es uno de los stages ===> {it}")
+    }
+
     env.TAREA = 'Paso 1: Compliar'
     stage("${env.TAREA}") {
         sh 'mvn clean compile -e'
