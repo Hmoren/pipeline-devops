@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script{
                     sh "env"
-                    env.TAREA = ""
+                    env.DESCRTIPTION_STAGE = ""
                   switch(params.compileTool)
                     {
                         case 'Maven':
@@ -35,7 +35,7 @@ pipeline {
                     slackSend color: 'good', message: "[Hernan Moreno] [${JOB_NAME}] [${BUILD_TAG}] Ejecucion Exitosa", teamDomain: 'dipdevopsusac-tr94431', tokenCredentialId: 'token-slack-jenkins'
                 }
                 failure{
-                    slackSend color: 'danger', message: "[Hernan Moreno] [${env.JOB_NAME}] [${BUILD_TAG}] Ejecucion fallida en stage [${env.TAREA}]", teamDomain: 'dipdevopsusac-tr94431', tokenCredentialId: 'token-slack-jenkins'
+                    slackSend color: 'danger', message: "[Hernan Moreno] [${env.JOB_NAME}] [${BUILD_TAG}] Ejecucion fallida en stage [${env.DESCRTIPTION_STAGE}]", teamDomain: 'dipdevopsusac-tr94431', tokenCredentialId: 'token-slack-jenkins'
                 }
             }
         }
