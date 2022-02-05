@@ -3,7 +3,14 @@
     def ejecucion = load 'script.groovy'
     ejecucion.call()
 */
-def call() {
+def call(stages) {
+
+    def stageList = stage.split(";")
+    stageList.each{
+        println("Stages enviados ===> ${it}")
+    }
+
+
     env.TAREA = 'Paso 1: Build && Test'
     stage("${env.TAREA}") {
         sh 'gradle clean build'
@@ -47,7 +54,6 @@ def call() {
     }
     env.TAREA = 'Paso 6: Levantar Artefacto Jar'
     stage("${env.TAREA}") {
-        
         sh 'java -jar DevOpsUsach2020-0.0.1.jar & >/dev/null'
         //sh 'nohup bash java -jar DevOpsUsach2020-0.0.1.jar & >/dev/null'
     }
