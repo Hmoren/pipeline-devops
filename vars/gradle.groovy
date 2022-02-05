@@ -27,8 +27,6 @@ def call(stages) {
     def stagesArray = []
     stagesArray = arrayUtils.searchKeyInArray(stages, ';', listStagesOrder)
 
-    sh "echo stagesArray"
-
     if (stagesArray.isEmpty()) {
         echo 'El pipeline se ejecutará completo'
         allStages()
