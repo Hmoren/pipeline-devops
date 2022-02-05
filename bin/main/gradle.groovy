@@ -6,7 +6,7 @@
 def call(stages) {
 
     def stageList = stage.split(";")
-    echo stageList
+    sh "echo stageList"
     stageList.each{
         println("Stage enviados ${it}")
     }
