@@ -6,8 +6,9 @@
 def call(stages) {
 
     def stageList = stage.split(";")
+    echo stageList
     stageList.each{
-        println("Stages enviados ===> ${it}")
+        println("Stage enviados ${it}")
     }
 
 
