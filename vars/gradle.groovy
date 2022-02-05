@@ -5,11 +5,7 @@
 */
 def call(stages) {
 
-    def stageList = stage.split(";")
-    sh "echo stageList"
-    stageList.each{
-        println("Stage enviados ${it}")
-    }
+    
 
 
     env.TAREA = 'Paso 1: Build && Test'
