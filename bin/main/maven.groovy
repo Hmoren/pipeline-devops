@@ -12,7 +12,9 @@ def call(stages) {
     }
 
     def listStagesOrder = [
-        'build': 'stageCleanBuildTest',
+        'compile': 'stageCleanCompile',
+        'test': 'stageCleanTest',
+        'build': 'stageCleanBuild',
         'sonar': 'stageSonar',
         'run_spring_curl': 'stageRunSpringCurl',
         'upload_nexus': 'stageUploadNexus',
