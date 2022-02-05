@@ -3,6 +3,7 @@
     def ejecucion = load 'script.groovy'
     ejecucion.call()
 */
+import utilities.*
 def call(stages) {
     sh "echo 'ESTOY EN MAVEN'"
 
